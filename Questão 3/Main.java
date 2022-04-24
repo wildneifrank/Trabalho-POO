@@ -9,13 +9,15 @@ class Main {
         int[] primos = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
 
         Set<Integer> prim = new HashSet<Integer>();
+
+        for (int i : primos){
+            prim.add(i);
+        }
+        
         Set<Integer> impar = new HashSet<Integer>();
         Set<Integer> par = new HashSet<Integer>();
         Set<Integer> nat = new HashSet<Integer>();
 
-        System.out.println("Item A -> 4 é subconjunto de si mesmo :" + prim.containsAll(prim));
-        System.out.println("Item B -> Pertinência do conjunto 2 e 3 :" + prim.containsAll(prim));
-        System.out.println("Item A -> 4 é subconjunto de si mesmo :" + prim.containsAll(prim));
         System.out.println("Item A -> 4 é subconjunto de si mesmo :" + prim.containsAll(prim));
     }
 }
