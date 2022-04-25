@@ -9,8 +9,9 @@ public class Conjunto {
 		
 		//Demarcador
 		int i = 0;
+		int fim = 0;
 		
-		while(i < 4) {	
+		while(fim != 1) {	
 			System.out.println("Informe o dígito do comando:");
 			System.out.println("1.Criar um Conjunto.");
 			System.out.println("2.Inserir elementos no conjunto.");
@@ -19,30 +20,31 @@ public class Conjunto {
 			System.out.println("5.União de conjuntos.");
 			System.out.println("6.Intersecção de conjuntos.");	
 			System.out.println("7.Diferença de dois conjuntos.");
-			System.out.println("8.printar");
+			System.out.println("8.printar.");
+			System.out.println("9.Fim do programa.");
 			
 			//Recebe a ordem
 			int order = Util.readInt();
 			
-			//Operações
+			//---------Operações---------//
+			
+			//Comando 1
 			if(order == 1) {
 				//Cria o conjunto
 				Ajuda conj = new Ajuda();
 				lista.add(conj);
 				System.out.println("Conjunto criado. Seu dígito é " + i);
 				i++;
-				
-				//Limite
-				if(i==4) {
-					System.out.println("Limite de conjuntos execedido.");
-					System.out.println("Fim do Programa");
-				}
 			}
 			
 			//Comando 2
 			else if(order == 2) {
 				System.out.println("Informe qual dígito do conjunto");
 				int localizador = Util.readInt();
+				if(localizador > i || localizador == i & i ==0) {
+					System.out.println("Conjunto inexistente.");
+					continue;
+				}
 				System.out.println("Informe a quantidade de elementos:");
 				int tam = Util.readInt();
 				System.out.println("Digite os elementos:");
@@ -62,7 +64,7 @@ public class Conjunto {
 				System.out.println("O conjunto " + localizador + " contém o elemento " + element + ": "+ lista.get(localizador).conjuntinho.contains(element));
 			}
 			
-			//Comando 4 (Deu erro)
+			//Comando 4
 			else if(order == 4) {
 				System.out.println("Informe o dígito do conjunto principal:");
 				int localizador1 = Util.readInt();
@@ -72,14 +74,38 @@ public class Conjunto {
 				lista.get(localizador1).conjuntinho.containsAll(lista.get(localizador2).conjuntinho));
 			}
 			
+			//Comando 5
+			else if(order == 5) {
+				System.out.println("Informe o dígito do primeiro conjunto");
+				int localizador1 = Util.readInt();
+				System.out.println("Informe o dígito do segundo conjunto");
+				int localizador2 = Util.readInt();
+				//Criar conjunto união
+				Ajuda conj = new Ajuda();
+				lista.add(conj);
+				lista.get(i).conjuntinho.addAll(lista.get(localizador1).conjuntinho);
+				lista.get(i).conjuntinho.addAll(lista.get(localizador2).conjuntinho);
+				System.out.println("Conjunto da união criado. Seu dígito é " + i);
+				i++;
+			}
+			
 			//Comando 8
 			else if(order == 8) {
 				System.out.println("Informe qual dígito do conjunto");
 				int localizador = Util.readInt();
 				System.out.println(lista.get(localizador).conjuntinho);
 			}
-		}
-		
-	}
-	
+			
+			//Comando 9
+			else if(order == 9) {
+				System.out.println("Fim do programa.");
+				fim = 1;
+			}
+			
+			//Comando inexistente
+			else {
+				System.out.println("ERRO. Código inválido.");
+			}
+		}	
+	}	
 }
