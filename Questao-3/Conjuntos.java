@@ -1,17 +1,16 @@
-package aula01;
+//package Trabalho-POO;
 
-import java.util.ArrayList;
+import java.util.*;
 
-public class Conjunto {
+public class Conjuntos {
 	public static void main(String[] args) {
 		//Cria a lista de conjuntos
 		ArrayList<Ajuda> lista = new ArrayList<>();
 		
 		//Demarcador
 		int i = 0;
-		int fim = 0;
 		
-		while(fim != 1) {	
+		while(true) {	
 			System.out.println("Informe o dígito do comando:");
 			System.out.println("1.Criar um Conjunto.");
 			System.out.println("2.Inserir elementos no conjunto.");
@@ -88,6 +87,13 @@ public class Conjunto {
 				System.out.println("Conjunto da união criado. Seu dígito é " + i);
 				i++;
 			}
+
+			else if(order == 6) {
+				System.out.println("Informe qual dígito do conjunto");
+				int localizador = Util.readInt();
+				
+
+			}
 			
 			//Comando 8
 			else if(order == 8) {
@@ -99,7 +105,7 @@ public class Conjunto {
 			//Comando 9
 			else if(order == 9) {
 				System.out.println("Fim do programa.");
-				fim = 1;
+				break;
 			}
 			
 			//Comando inexistente
