@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Conjuntos {
@@ -9,6 +10,7 @@ public class Conjuntos {
 		int i = 0;
 		
 		while(true) {	
+      //Menu
 			System.out.println("Informe o dígito do comando:");
 			System.out.println("1.Criar um Conjunto.");
 			System.out.println("2.Inserir elementos no conjunto.");
@@ -17,7 +19,7 @@ public class Conjuntos {
 			System.out.println("5.União de conjuntos.");
 			System.out.println("6.Intersecção de conjuntos.");	
 			System.out.println("7.Diferença de dois conjuntos.");
-			System.out.println("8.printar.");
+			System.out.println("8.Printar.");
 			System.out.println("9.Fim do programa.");
 			
 			//Recebe a ordem
@@ -36,7 +38,7 @@ public class Conjuntos {
 			
 			//Comando 2
 			else if(order == 2) {
-				System.out.println("Informe qual dígito do conjunto");
+				System.out.println("Informe qual é o dígito do conjunto");
 				int localizador = Util.readInt();
 				//Verificar se o conjunto existe 
 				if(localizador > (i - 1)) {
@@ -177,6 +179,11 @@ public class Conjuntos {
 			else if(order == 8) {
 				System.out.println("Informe qual dígito do conjunto");
 				int localizador = Util.readInt();
+				//Verificar se o conjunto existe 
+				if(localizador > (i - 1)) {
+					System.out.println("Conjunto inexistente.");
+					continue;
+				}
 				System.out.println(lista.get(localizador).conjuntinho);
 			}
 			
