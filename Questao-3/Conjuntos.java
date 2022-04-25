@@ -1,5 +1,3 @@
-//package Trabalho-POO;
-
 import java.util.*;
 
 public class Conjuntos {
@@ -87,12 +85,35 @@ public class Conjuntos {
 				System.out.println("Conjunto da união criado. Seu dígito é " + i);
 				i++;
 			}
-
+			
+			//Comando 6
 			else if(order == 6) {
-				System.out.println("Informe qual dígito do conjunto");
-				int localizador = Util.readInt();
-				
-
+				System.out.println("Informe qual dígito do primeiro conjunto conjunto.");
+				int localizador1 = Util.readInt();
+				System.out.println("Informe qual dígito do segundo conjunto conjunto.");
+				int localizador2 = Util.readInt();
+				//Criar conjunto de intersecção
+				Ajuda conj = new Ajuda();
+				lista.add(conj);
+				lista.get(i).conjuntinho.addAll(lista.get(localizador1).conjuntinho);
+				lista.get(i).conjuntinho.retainAll(lista.get(localizador2).conjuntinho);
+				System.out.println("Conjunto de intersecção criado. Seu dígito é " + i);
+				i++;	
+			}
+			
+			//Comando 7
+			else if(order == 7) {
+				System.out.println("Informe qual dígito do primeiro conjunto conjunto.");
+				int localizador1 = Util.readInt();
+				System.out.println("Informe qual dígito do segundo conjunto conjunto.");
+				int localizador2 = Util.readInt();
+				//Criar conjunto de diferença
+				Ajuda conj = new Ajuda();
+				lista.add(conj);
+				lista.get(i).conjuntinho.addAll(lista.get(localizador1).conjuntinho);
+				lista.get(i).conjuntinho.removeAll(lista.get(localizador2).conjuntinho);
+				System.out.println("Conjunto de diferença criado. Seu dígito é " + i);
+				i++;	
 			}
 			
 			//Comando 8
@@ -115,3 +136,4 @@ public class Conjuntos {
 		}	
 	}	
 }
+
