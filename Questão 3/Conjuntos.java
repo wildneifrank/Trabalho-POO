@@ -68,8 +68,8 @@ public class Conjunto {
 				int localizador1 = Util.readInt();
 				System.out.println("Informe o dígito do conjunto secundário, o qual será verificado se é de fato ou não subconjunto:");
 				int localizador2 = Util.readInt();
-				System.out.println("O conjunto " + localizador2 + "é subconjunto de " + localizador1 + ": " +
-				lista.get(localizador1).conjuntinho.contains(lista.get(localizador2).conjuntinho));
+				System.out.println("O conjunto " + localizador2 + " é subconjunto de " + localizador1 + ": " +
+				lista.get(localizador1).conjuntinho.containsAll(lista.get(localizador2).conjuntinho));
 			}
 			
 			//Comando 8
