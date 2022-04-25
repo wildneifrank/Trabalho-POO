@@ -14,7 +14,12 @@ public class Conjunto {
 			System.out.println("Informe o dígito do comando:");
 			System.out.println("1.Criar um Conjunto.");
 			System.out.println("2.Inserir elementos no conjunto.");
-			System.out.println("3.printar");
+			System.out.println("3.Verificar pertencimento de um elemento.");
+			System.out.println("4.Verificação de um conjunto ser subconjunto do outro.");
+			System.out.println("5.União de conjuntos.");
+			System.out.println("6.Intersecção de conjuntos.");	
+			System.out.println("7.Diferença de dois conjuntos.");
+			System.out.println("8.printar");
 			
 			//Recebe a ordem
 			int order = Util.readInt();
@@ -34,6 +39,7 @@ public class Conjunto {
 				}
 			}
 			
+			//Comando 2
 			else if(order == 2) {
 				System.out.println("Informe qual dígito do conjunto");
 				int localizador = Util.readInt();
@@ -44,8 +50,30 @@ public class Conjunto {
 					int number = Util.readInt();
 					lista.get(localizador).conjuntinho.add(number);
 				}
+				System.out.println("Elementos inseridos.");
 			}
+			
+			//Comando 3
 			else if(order == 3) {
+				System.out.println("Informe o dígito do conjunto.");
+				int localizador = Util.readInt();
+				System.out.println("Digite qual o elemento deseja verificar a pertinência.");
+				int element = Util.readInt();
+				System.out.println("O conjunto " + localizador + " contém o elemento " + element + ": "+ lista.get(localizador).conjuntinho.contains(element));
+			}
+			
+			//Comando 4 (Deu erro)
+			else if(order == 4) {
+				System.out.println("Informe o dígito do conjunto principal:");
+				int localizador1 = Util.readInt();
+				System.out.println("Informe o dígito do conjunto secundário, o qual será verificado se é de fato ou não subconjunto:");
+				int localizador2 = Util.readInt();
+				System.out.println("O conjunto " + localizador2 + "é subconjunto de " + localizador1 + ": " +
+				lista.get(localizador1).conjuntinho.contains(lista.get(localizador2).conjuntinho));
+			}
+			
+			//Comando 8
+			else if(order == 8) {
 				System.out.println("Informe qual dígito do conjunto");
 				int localizador = Util.readInt();
 				System.out.println(lista.get(localizador).conjuntinho);
